@@ -3,7 +3,6 @@ from commands import *
 
 from telegram.ext import Updater
 from telegram.ext import CommandHandler
-
 #commands
 
 updater = Updater(token='1033505337:AAFVOVB4Ksf5vYJtOw5gh3IlMVqJ5RC2pNQ', use_context=True);

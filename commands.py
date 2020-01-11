@@ -40,3 +40,22 @@ def help(update, context):
 #
 # Return value: None
 #
+''' Here is simple one line function '''
+
+
+# Type: Command
+#
+# Name: /test
+#
+# Arguments:
+#
+# Functional: 
+#   Test functionality for developer =) me actioly
+#
+# Return value: None
+#
+def test(update, context):
+    context.bot.send_message(chat_id=update.effective_chat.id,
+                             text="");
+
+                             #in field "text" should be function that return value 

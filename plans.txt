@@ -1,0 +1,7 @@
+
+
+TODO:
+DONE 1) Test all functions in parameters.py, and find what CoinMarketCap API allow now
+2) Implement RequestComposer, as url composer and as consequence appropriate function from parameters.py usage
+3) Find a way to get message from user, and send him a proper request. //complicated
+4) As consequence of 3) add voice analysis via google  api

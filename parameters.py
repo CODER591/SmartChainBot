@@ -5,13 +5,14 @@
 #               map
 #               info
 #               listings/latest
-#               listings/historical
+#               listings/historical  not supported anymore
 #               quotes/latest
 #''' Other options is not supported because of my free Basic plan '''
 
 #Cryptocurrency
 #Url="https://pro-api.coinmarketcap.com/v1/cryptocurrency/"
-        #map
+
+#map
 def Crypto_Map(listing_status,start,limit,sort,symbol,aux):
         parameters={};
         #parameters['listing_status']=listing_status; #not allowed??
@@ -24,9 +25,9 @@ def Crypto_Map(listing_status,start,limit,sort,symbol,aux):
 #info
 def Crypto_Info(id,slug,symbol,aux):
         parameters={};
-        parameters['id']=id;
-        parameters['slug']=slug;
-        parameters['symbol']=symbol;
+        #parameters['id']=id;
+        #parameters['slug']=slug;    //seems like aux only allowed
+        #parameters['symbol']=symbol;
         parameters['aux']=aux;
         return parameters;
 #listings/latest
@@ -38,13 +39,13 @@ def Crypto_List_Latest(start,limit,volume_24h_min,
         parameters['limit']=limit;
         parameters['volume_24h_min']=start;
         parameters['convert']=convert;
-        parameters['convert_id']=convert_id;
+        #parameters['convert_id']=convert_id;  //cant exist with "convert"
         parameters['sort']=sort;
         parameters['sort_dir']=sort_dir;
         parameters['cryptocurrency_type']=cryptocurrency_type;
         parameters['aux']=aux;
         return parameters;
-#listings/historical
+#listings/historical    #Not supported API KEY plan
 def Crypto_List_Historical(date,start,limit,
                            convert,convert_id,sort,
                            sort_dir,cryptocurrency_type,aux):
@@ -53,14 +54,14 @@ def Crypto_List_Historical(date,start,limit,
         parameters['start']=start;
         parameters['limit']=limit;
         parameters['convert']=convert;
-        parameters['convert_id']=convert_id;
+        parameters['convert_id']=convert_id; # I suspect can"t use as in previous
         parameters['sort']=sort;
         parameters['sort_dir']=sort_dir;
         parameters['cryptocurrency_type']=cryptocurrency_type;
         parameters['aux']=aux;
         return parameters;
 #quotes/latest
-def Crypto_Qutotes_Latest(id,slug,symbol,
+def Crypto_Quotes_Latest(id,slug,symbol,
                           convert,convert_id,aux,
                           skip_invalid):
         parameters={};
@@ -68,7 +69,7 @@ def Crypto_Qutotes_Latest(id,slug,symbol,
         parameters['slug']=slug;
         parameters['symbol']=symbol;
         parameters['convert']=convert;
-        parameters['convert_id']=convert_id;
+        #parameters['convert_id']=convert_id; same as previous
         parameters['aux']=aux;
         parameters['skip_invalid']=skip_invalid;
         return parameters;

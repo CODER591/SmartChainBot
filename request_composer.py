@@ -6,19 +6,14 @@
 #composing depending on received value
 
 #parameters are very much dynamic value.
+from headers import *
 from parameters import *
 from request import *
-url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
-key = ''
-'''parameters = {
-  'start':'1',
-  'limit':'5000',
-  'convert':'USD'
-}'''
-headers = {
-      'Accepts': 'application/json',
-      'Accept-Encoding': 'deflate, gzip',
-   }
+#url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
+#url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/info'
+
+url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
+key = 
 # Type: class
 # Name: RequestComposer
 #
@@ -27,24 +22,20 @@ headers = {
 # Functional: 
 #   approppriate headers and parameters setting, making request by using RequestProc class
 #class RequestComposer:
-#    headers = {
-#      'Accepts': 'application/json',
-#      'Accept-Encoding': 'deflate, gzip',
-#    }
-
 #    def __init__(self):
 
 
+# Plans
+# 1) Request composer composing request. So make switch that would choose/compose url;
+# 2) Few things would be hardcoded, but nevermind
+# 3) There is question, how to choose what request we need to send, what parameters we need?
 
-#there is no need to add key in headers, it would be added in constructor
-
-
-#move it to some command or wrapper, in any case remove this strings from this file
-new_req=RequestProc(headers,key);
-new_req.execRequest(Crypto_Map('active',1,5000,'name',symbol='',aux='platform'),url);
-#new_req.execRequest(parameters,url);
-
-
-# Request Compositor is a class that help us create as universal request
-# as possible
-# by seeting useful parameters and choose approppriate url
+new_req = RequestProc(GetBasicHeaders(),key);
+#new_req.execRequest(Crypto_Map('active',1,5000,'name',symbol='',aux='platform'),url);
+#new_req.execRequest(Crypto_Info(id='',slug='bitcoin',symbol='BTC',aux='platform'),url);
+#new_req.execRequest(Crypto_List_Latest(start='1',limit='5000',volume_24h_min='500',convert='USD',convert_id='1',sort='name',sort_dir='asc',cryptocurrency_type='all',aux='platform'),url);
+#new_req.execRequest(Crypto_List_Historical(date='2019-12-31',start='1',limit='5000',convert='USD',convert_id='1',sort='name',sort_dir='asc',cryptocurrency_type='all',aux='platform'),url);
+new_req.execRequest(Crypto_Quotes_Latest(id='1',slug='bitcoin',symbol='BTC',
+                          convert='USD',convert_id='',aux='platform',
+                          skip_invalid='true'),url)
+#

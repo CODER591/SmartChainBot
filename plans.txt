@@ -5,3 +5,5 @@ DONE 1) Test all functions in parameters.py, and find what CoinMarketCap API all
 2) Implement RequestComposer, as url composer and as consequence appropriate function from parameters.py usage
 3) Find a way to get message from user, and send him a proper request. //complicated
 4) As consequence of 3) add voice analysis via google  api
+5) Re-write comments, fix all fixme
+6) Add folders to bot structure

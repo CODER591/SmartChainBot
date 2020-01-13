@@ -1,3 +1,8 @@
+
+import os
+
+TGTOKEN = os.environ['TGTOKEN']
+
 import telegram
 from commands import *
 
@@ -5,7 +10,7 @@ from telegram.ext import Updater
 from telegram.ext import CommandHandler
 #commands
 
-updater = Updater(token='1033505337:AAFVOVB4Ksf5vYJtOw5gh3IlMVqJ5RC2pNQ', use_context=True);
+updater = Updater(token=TGTOKEN, use_context=True);
 #print(updater.get_me());
 dispatcher = updater.dispatcher;
 start_handler = CommandHandler('start', start);

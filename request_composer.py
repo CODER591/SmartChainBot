@@ -6,14 +6,18 @@
 #composing depending on received value
 
 #parameters are very much dynamic value.
+import os
+
 from headers import *
 from parameters import *
 from request import *
+
+KEY= os.environ['COINCAPKEY']
+
 #url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 #url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/info'
 
 url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
-key = 
 # Type: class
 # Name: RequestComposer
 #
@@ -30,7 +34,7 @@ key =
 # 2) Few things would be hardcoded, but nevermind
 # 3) There is question, how to choose what request we need to send, what parameters we need?
 
-new_req = RequestProc(GetBasicHeaders(),key);
+new_req = RequestProc(GetBasicHeaders(),KEY);
 #new_req.execRequest(Crypto_Map('active',1,5000,'name',symbol='',aux='platform'),url);
 #new_req.execRequest(Crypto_Info(id='',slug='bitcoin',symbol='BTC',aux='platform'),url);
 #new_req.execRequest(Crypto_List_Latest(start='1',limit='5000',volume_24h_min='500',convert='USD',convert_id='1',sort='name',sort_dir='asc',cryptocurrency_type='all',aux='platform'),url);
